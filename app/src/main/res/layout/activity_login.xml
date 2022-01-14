@@ -100,7 +100,7 @@
         android:onClick="fRegister_Click"
         android:text="@string/str_register"
         android:textColor="@color/a3_color"
-        android:textStyle="normal"
+        android:textStyle="normal|bold"
         tools:ignore="UsingOnClickInXml" />
 
     <TextView

@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
         Log.d("Test",jsonObject.toString());
 
         Request request = new Request.Builder()
-                .url("http://192.168.0.13:8000/api/login")
+                .url(ParamAPI.url+"/api/login")
                 .post(body)
                 .build();
 
