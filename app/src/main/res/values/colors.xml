@@ -7,4 +7,22 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="a1_color">#0069A3</color>
+    <color name="a2_color">#8BBB19</color>
+    <color name="a3_color">#686B73</color>
+
+
+    <color name="theme_purple">#7000E3</color>
+    <color name="background_grey">#E5E5E5</color>
+    <color name="tvLoginActivity_grey">#686B73</color>
+    <color name="light_grey_icons">#808080</color>
+    <color name="dark_grey_icons">#696969</color>
+    <color name="PinkColour_UsedInMainPage_messages">#F7A6CF</color>
+    <color name="SkyBlue_color">#4DAADD</color>
+
+
+
+
 </resources>
