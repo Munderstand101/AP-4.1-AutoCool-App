@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListeVoituresActivity">
+
+    <ImageView
+        android:id="@+id/iv_Left_Arrow"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="17dp"
+        android:onClick="fBack_Click"
+        app:srcCompat="@drawable/ic_prev"
+        tools:ignore="UsingOnClickInXml" />
+
+    <ImageView
+        android:id="@+id/iv_Left_Arrow1"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="44dp"
+        android:onClick="fAjouter_Click"
+        app:srcCompat="@drawable/ic_plus2"
+        tools:ignore="UsingOnClickInXml" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@+id/iv_Left_Arrow1"
+        android:layout_toEndOf="@+id/iv_Left_Arrow"
+        android:gravity="center"
+        android:text="Liste Voitures"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:id="@+id/iv_Logo"
+        android:layout_width="299dp"
+        android:layout_height="99dp"
+        android:layout_below="@+id/tv_title"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="59dp"
+        android:padding="10dp"
+        app:srcCompat="@drawable/ic_logo2" />
+
+    <ListView
+        android:layout_width="330dp"
+        android:layout_height="528dp"
+        android:layout_below="@+id/iv_Logo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp" />
+
+
+</RelativeLayout>
