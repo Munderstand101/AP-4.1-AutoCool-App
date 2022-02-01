@@ -14,3 +14,10 @@
 ```bash
 ...
 ```
+## Les dependances :
+Pour ce projet, j'ai utilisé les bundles suivants :
+- [...]link ) (pour les fixtures) : `...`
+
+## TODO
+- [x] ..
+- [ ] ...
