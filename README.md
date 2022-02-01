@@ -5,3 +5,12 @@
 ```
 ...
 ```
+## Installation :
+```bash
+...
+```
+
+## Configuration :
+```bash
+...
+```
