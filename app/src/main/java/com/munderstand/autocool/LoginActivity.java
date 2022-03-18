@@ -82,8 +82,8 @@ public class LoginActivity extends AppCompatActivity {
       ///  Log.d("test", String.valueOf(formBody));
 
         Request request = new Request.Builder()
-                .url("http://172.19.229.47/APIautocool/api/login")
-                .post(formBody)
+                .url(ParamAPI.url+"/api/login")
+                .post(body)
                 .build();
 
         Call call = client.newCall(request);
