@@ -58,53 +58,6 @@
         app:srcCompat="@drawable/ic_logo2" />
 
 
-<!--    <Button-->
-<!--        android:id="@+id/btn_ListeCategorieVoiture"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@+id/iv_Logo"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_marginStart="30dp"-->
-<!--        android:layout_marginTop="70dp"-->
-<!--        android:layout_marginEnd="30dp"-->
-<!--        android:background="@drawable/rectangle"-->
-<!--        android:text="ListeCategorieVoiture"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="20dp" />-->
-
-    <Button
-        android:id="@+id/btn_ListeVoiture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_Logo"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="31dp"
-        android:background="@drawable/rectangle"
-        android:text="Gérer les voitures"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
-
-    <Button
-        android:id="@+id/btn_ListeAdherent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_Logo"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="122dp"
-        android:layout_marginEnd="30dp"
-        android:background="@drawable/rectangle"
-        android:text="Gérer les adhérents"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
 
 
 </RelativeLayout>

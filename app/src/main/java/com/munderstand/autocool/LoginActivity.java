@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -60,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        
+
 
     }
     public void fRegister_Click(View view){
@@ -74,12 +73,17 @@ public class LoginActivity extends AppCompatActivity {
         final EditText textLogin = findViewById(R.id.et_username);
         final EditText textMdp = findViewById(R.id.et_password);
 
-        RequestBody formBody = new FormBody.Builder()
-                .add("nom", textLogin.getText().toString())
-                .add("mdp",  textMdp.getText().toString())
-                .build();
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("username", textLogin.getText().toString());
+            jsonObject.put("password", textMdp.getText().toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+        RequestBody body = RequestBody.create(JSON, jsonObject.toString());
 
-      ///  Log.d("test", String.valueOf(formBody));
+        Log.d("Test",jsonObject.toString());
 
         Request request = new Request.Builder()
                 .url(ParamAPI.url+"/api/login")
@@ -92,13 +96,13 @@ public class LoginActivity extends AppCompatActivity {
             public  void onResponse(Call call, Response response) throws IOException {
 
                 responseStr = response.body().string();
-                Log.d("test2", responseStr);
 
                 if (responseStr.compareTo("false")!=0){
                     try {
                         JSONObject etudiant = new JSONObject(responseStr);
+                        Log.d("Test",etudiant.getString("username") + " est  connecté");
 
-                        Log.d("Test",etudiant.getString("nom") + " est  connecté");
+
 
                         Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                         intent.putExtra("username", etudiant.toString());

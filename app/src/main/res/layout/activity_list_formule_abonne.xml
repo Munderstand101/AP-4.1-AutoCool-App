@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuActivity">
+    tools:context=".ListFormuleAbonneActivity">
 
     <ImageView
         android:id="@+id/iv_Left_Arrow"
@@ -35,7 +35,6 @@
         android:id="@+id/tv_title"
         android:layout_width="150dp"
         android:layout_height="30dp"
-
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="14dp"
@@ -57,54 +56,26 @@
         android:padding="10dp"
         app:srcCompat="@drawable/ic_logo2" />
 
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_ListeCategorieVoiture"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@+id/iv_Logo"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_marginStart="30dp"-->
-<!--        android:layout_marginTop="70dp"-->
-<!--        android:layout_marginEnd="30dp"-->
-<!--        android:background="@drawable/rectangle"-->
-<!--        android:text="ListeCategorieVoiture"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="20dp" />-->
+    <Spinner
+        android:id="@+id/dropdown_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_below="@id/iv_Logo"
+        android:layout_marginTop="200dp"/>
 
     <Button
-        android:id="@+id/btn_ListeVoiture"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_consulter"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_Logo"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="31dp"
+        android:layout_below="@id/dropdown_menu"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/rectangle"
-        android:text="Gérer les voitures"
+        android:text="Consulter"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20dp" />
-
-    <Button
-        android:id="@+id/btn_ListeAdherent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_Logo"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="122dp"
-        android:layout_marginEnd="30dp"
-        android:background="@drawable/rectangle"
-        android:text="Gérer les adhérents"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
-
 
 </RelativeLayout>

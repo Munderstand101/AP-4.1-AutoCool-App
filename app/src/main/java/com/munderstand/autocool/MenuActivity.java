@@ -24,6 +24,15 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        final Button buttonLesAdherents = (Button) findViewById(R.id.btn_ListeAdherent);
+        buttonLesAdherents.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, ListFormuleAbonneActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void fSettings_Click(View view) {
