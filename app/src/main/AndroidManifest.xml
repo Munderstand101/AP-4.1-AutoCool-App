@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AutoCool">
         <activity
-            android:name=".ListFormuleAbonneActivity"
+            android:name=".ListAbonneFormuleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListFormuleActivity"
             android:exported="false" />
         <activity
             android:name=".ListAdherentActivity"

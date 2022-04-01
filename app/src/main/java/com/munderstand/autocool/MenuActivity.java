@@ -28,7 +28,7 @@ public class MenuActivity extends AppCompatActivity {
         buttonLesAdherents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, ListFormuleAbonneActivity.class);
+                Intent intent = new Intent(MenuActivity.this, ListFormuleActivity.class);
                 startActivity(intent);
             }
         });

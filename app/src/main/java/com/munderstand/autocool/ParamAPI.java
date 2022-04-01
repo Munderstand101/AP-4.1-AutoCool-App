@@ -1,7 +1,7 @@
 package com.munderstand.autocool;
 
 public class ParamAPI {
-    public static String url = "http://88.125.155.66:38002";
+    public static String url = "http://172.19.229.47:8000";
 
 
 
