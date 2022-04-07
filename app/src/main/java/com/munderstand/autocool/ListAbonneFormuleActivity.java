@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +29,7 @@ public class ListAbonneFormuleActivity extends AppCompatActivity {
     String responseStr ;
     OkHttpClient client = new OkHttpClient();
     ArrayList<Integer> ListIdAbonne = new ArrayList();
+    long itemId = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,22 @@ public class ListAbonneFormuleActivity extends AppCompatActivity {
         }catch(Exception e){
             e.printStackTrace();
         }
+
+        ListView listview = findViewById(R.id.list_item);
+        listview.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                itemId = id;
+                Toast.makeText(ListAbonneFormuleActivity.this, "Personne selectionné : " + (String) parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+
+//                Log.d("test", String.valueOf(item));
+
+                Intent intent = new Intent(ListAbonneFormuleActivity.this, LoginActivity.class);
+                intent.putExtra("idAbonne", ListIdAbonne.get((int) itemId));
+                startActivity(intent);
+
+            }
+        });
     }
 
     public void getAdherant(int id){

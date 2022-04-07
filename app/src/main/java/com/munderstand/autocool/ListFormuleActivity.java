@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,6 +37,8 @@ public class ListFormuleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_formule);
+        getSupportActionBar().hide();
+
 
         try{
             listeFormules();
@@ -48,6 +51,10 @@ public class ListFormuleActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
                 itemId = id;
+                Toast.makeText(ListFormuleActivity.this, "Element selectionné : " + (String) parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+
+//                Log.d("test", String.valueOf(item));
+
             }
         });
 
@@ -72,7 +79,7 @@ public class ListFormuleActivity extends AppCompatActivity {
 //                LauncherActivity.ListItem item = (LauncherActivity.ListItem) parent.getItemAtPosition(position);
 //
 //                Log.d("test", String.valueOf(item));
-//
+
 //                //Intent intent = new Intent(this, destinationActivity.class);
 //                //based on item add info to intent
 //                //startActivity(intent);

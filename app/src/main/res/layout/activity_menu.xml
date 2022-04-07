@@ -14,8 +14,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="15dp"
         android:layout_marginTop="17dp"
-        android:onClick="fSettings_Click"
-        app:srcCompat="@drawable/ic_setting"
+        android:onClick="fBack_Click"
+        app:srcCompat="@drawable/ic_prev"
         tools:ignore="UsingOnClickInXml" />
 
     <ImageView
@@ -27,15 +27,14 @@
         android:layout_marginTop="17dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="44dp"
-        android:onClick="fUser_Click"
-        app:srcCompat="@drawable/ic_edit_user1"
+        android:onClick="fAjouter_Click"
+        app:srcCompat="@drawable/ic_plus2"
         tools:ignore="UsingOnClickInXml" />
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="150dp"
         android:layout_height="30dp"
-
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="14dp"
@@ -56,23 +55,6 @@
         android:layout_marginTop="50dp"
         android:padding="10dp"
         app:srcCompat="@drawable/ic_logo2" />
-
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_ListeCategorieVoiture"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@+id/iv_Logo"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_marginStart="30dp"-->
-<!--        android:layout_marginTop="70dp"-->
-<!--        android:layout_marginEnd="30dp"-->
-<!--        android:background="@drawable/rectangle"-->
-<!--        android:text="ListeCategorieVoiture"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="20dp" />-->
 
     <Button
         android:id="@+id/btn_ListeVoiture"

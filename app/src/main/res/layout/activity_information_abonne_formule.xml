@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InformationAbonneFormuleActivity">
+
+    <EditText
+        android:id="@+id/et_automatique"
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_type_Vehicule"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@+id/et_nombre_places"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="48dp"
+
+        android:textColor="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/et_station"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_numero_Vehicule"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="20dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_ville"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_numero_Vehicule"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="66dp"
+        android:layout_toEndOf="@+id/tv_nom"
+        android:text="Prenom"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/et_ville"
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_numero_Vehicule"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@+id/et_station"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_type_Vehicule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="21dp"
+        android:text="Adresse"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/et_type_Vehicule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/title_dateadhesion2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_type_Vehicule"
+        android:layout_alignStart="@+id/et_nombre_places"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="21dp"
+        android:text="Ville"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/et_nombre_places"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_type_Vehicule"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/et_kilometrage"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_nombre_places"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="20dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="40dp"
+        android:textColor="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/et_niveau_essence"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_automatique"
+        android:layout_marginStart="32dp"
+
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@+id/et_kilometrage"
+
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_niveau_essence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_nombre_places"
+        android:layout_alignStart="@+id/et_niveau_essence"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="14dp"
+        android:text="Email"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_kilometrage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_nombre_places"
+        android:layout_alignStart="@+id/et_kilometrage"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="13dp"
+        android:text="Date de naissance"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_numfixe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_nombre_places"
+        android:layout_alignStart="@+id/et_kilometrage"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="98dp"
+        android:text="Telephone fixe"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/et_numfixe"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_nombre_places"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="117dp"
+        android:layout_marginEnd="20dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="40dp"
+        android:textColor="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_numportable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_nombre_places"
+        android:layout_alignStart="@+id/et_niveau_essence"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="98dp"
+        android:text="Telephone"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/et_numero"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_nombre_places"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="119dp"
+        android:layout_marginEnd="20dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="40dp"
+        android:textColor="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_automatique"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_type_Vehicule"
+        android:layout_alignStart="@+id/et_automatique"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="18dp"
+        android:text="Code postal"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_nom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_numero_Vehicule"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="66dp"
+        android:text="Nom"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_title_dateadhesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Date d'adhesion"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_infotitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="81dp"
+        android:text="Information d'adhesion"
+        android:textColor="@color/a1_color"
+        android:textSize="28dp"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/et_numero_Vehicule"
+        android:layout_width="361dp"
+        android:layout_height="28dp"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <ImageView
+        android:id="@+id/iv_Left_Arrow"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="17dp"
+        android:onClick="fBack_Click"
+        app:srcCompat="@drawable/ic_prev"
+        tools:ignore="UsingOnClickInXml" />
+
+    <ImageView
+        android:id="@+id/iv_Left_Arrow1"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="44dp"
+        android:onClick="fEdit_Click"
+        app:srcCompat="@drawable/ic_edit"
+        tools:ignore="UsingOnClickInXml" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@+id/iv_Left_Arrow1"
+        android:layout_toEndOf="@+id/iv_Left_Arrow"
+        android:gravity="center"
+        android:text="Details Adherent"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_kilometrage"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="362dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rectangle"
+        android:text="@string/str_retour_la_liste"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tv_permis_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="557dp"
+        android:text="Information permis de conduire"
+        android:textColor="@color/a1_color"
+        android:textSize="28dp"
+        android:textStyle="normal" />
+
+</RelativeLayout>

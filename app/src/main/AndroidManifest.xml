@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AutoCool">
         <activity
+            android:name=".InformationAbonneFormuleActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListAbonneFormuleActivity"
             android:exported="false" />
         <activity
