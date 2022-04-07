@@ -1,9 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ListeCategorieVoituresActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MenuActivity">
+
+        <ImageView
+            android:id="@+id/iv_Left_Arrow"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="17dp"
+            android:onClick="fSettings_Click"
+            app:srcCompat="@drawable/ic_setting"
+            tools:ignore="UsingOnClickInXml" />
+
+        <ImageView
+            android:id="@+id/iv_Left_Arrow1"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="44dp"
+            android:onClick="fUser_Click"
+            app:srcCompat="@drawable/ic_edit_user1"
+            tools:ignore="UsingOnClickInXml" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="0dp"
+            android:layout_toStartOf="@+id/iv_Left_Arrow1"
+            android:layout_toEndOf="@+id/iv_Left_Arrow"
+            android:gravity="center"
+            android:text="Menu"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/iv_Logo"
+            android:layout_width="278dp"
+            android:layout_height="87dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:padding="0dp"
+            app:srcCompat="@drawable/ic_logo2" />
+
+
+        <Spinner
+            android:id="@+id/dropdown_menu"
+            android:layout_width="352dp"
+            android:layout_height="41dp"
+            android:layout_below="@id/iv_Logo"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="185dp"
+            android:layout_marginEnd="30dp" />
+
+        <ListView
+            android:id="@+id/lv_Voitures"
+            android:layout_width="340dp"
+            android:layout_height="386dp"
+            android:layout_below="@+id/dropdown_menu"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="41dp" />
+
+        <TextView
+            android:id="@+id/tv_categlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_Logo"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/str_categlist"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tv_usernam1e"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dropdown_menu"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/str_carlist"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/btn_ListeCategorieVoiture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lv_Voitures"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rectangle"
+            android:text="Consulter"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+
+    </RelativeLayout>

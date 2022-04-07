@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -20,7 +22,8 @@ public class MenuActivity extends AppCompatActivity {
         buttonListeVoiture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, ListeVoituresActivity.class);
+                Intent intent = new Intent(MenuActivity.this, ListeCategorieVoituresActivity.class);
+//                Intent intent = new Intent(MenuActivity.this, DetailsVoitureActivity.class);
                 startActivity(intent);
             }
         });
@@ -43,7 +46,12 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
+
+
+
 
     public void fSettings_Click(View view) {
 
