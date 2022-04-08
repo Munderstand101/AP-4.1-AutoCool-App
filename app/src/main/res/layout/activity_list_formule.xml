@@ -71,14 +71,29 @@
 
     <Button
         android:id="@+id/btn_consulter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="177dp"
+        android:layout_height="80dp"
         android:layout_below="@id/list_item"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/rectangle"
         android:text="Consulter"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btn_creerUser"
+        android:layout_width="166dp"
+        android:layout_height="82dp"
+        android:layout_below="@id/list_item"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/rectangle"
+        android:text="Créer un compte"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20dp" />

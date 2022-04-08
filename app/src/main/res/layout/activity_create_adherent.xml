@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CreateAdherentActivity">
+
+        <TextView
+            android:id="@+id/tv_title_dateadhesion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="104dp"
+            android:text="Date d'adhesion *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/et_codepostal"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_adresse"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/et_ville"
+
+
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/et_nom"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_infotitle"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="85dp"
+            android:layout_marginEnd="20dp"
+
+
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tv_prenom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_infotitle"
+            android:layout_marginStart="169dp"
+            android:layout_marginTop="66dp"
+            android:layout_toEndOf="@+id/tv_nom"
+            android:text="Prenom *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/et_prenom"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_infotitle"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="85dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/et_nom"
+
+
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tv_adresse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_prenom"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="21dp"
+            android:text="Adresse *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/et_adresse"
+            android:layout_width="383dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_prenom"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+
+
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/title_ville"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_adresse"
+            android:layout_alignStart="@+id/et_ville"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="21dp"
+            android:text="Ville *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/et_ville"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_adresse"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+
+
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <DatePicker
+            android:id="@+id/datepicker_naissance"
+            android:layout_width="385dp"
+            android:layout_height="148dp"
+            android:layout_below="@+id/tv_datenaissance"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="42dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+
+        <DatePicker
+            android:id="@+id/datepicker_adhesion"
+            android:layout_width="393dp"
+            android:layout_height="86dp"
+            android:layout_below="@+id/tv_datenaissance"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-489dp"
+            android:layout_marginEnd="52dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="164dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_codepostal"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="254dp"
+            android:layout_marginEnd="20dp"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_ville"
+            android:layout_alignStart="@+id/et_email"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="231dp"
+            android:layout_marginEnd="275dp"
+            android:text="Email *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/civilite"
+            android:layout_width="195dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="236dp"
+            android:layout_marginTop="873dp" />
+
+        <TextView
+            android:id="@+id/tv_civilite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_ville"
+            android:layout_alignStart="@+id/et_email"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="218dp"
+            android:layout_marginTop="231dp"
+            android:layout_marginEnd="60dp"
+            android:text="Civilite *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tv_datenaissance"
+            android:layout_width="172dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_ville"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="223dp"
+            android:text="Date de naissance *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tv_codepostal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_adresse"
+            android:layout_alignStart="@+id/et_codepostal"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="18dp"
+            android:text="Code postal *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tv_nom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_infotitle"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="66dp"
+            android:text="Nom *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+
+        <TextView
+            android:id="@+id/tv_infotitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="231dp"
+            android:text="Information d'adhesion"
+            android:textColor="@color/a1_color"
+            android:textSize="28dp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/et_nomFormule"
+            android:layout_width="369dp"
+            android:layout_height="37dp"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="51dp"
+            android:layout_marginEnd="20dp"
+            android:enabled="false"
+            android:focusable="false"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tv_nomFormule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="34dp"
+            android:text="Nom de la formule *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/iv_Left_Arrow"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="17dp"
+            android:onClick="fBack_Click"
+            app:srcCompat="@drawable/ic_prev"
+            tools:ignore="UsingOnClickInXml" />
+
+        <ImageView
+            android:id="@+id/iv_Left_Arrow1"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="44dp"
+            android:onClick="fEdit_Click"
+            app:srcCompat="@drawable/ic_edit"
+            tools:ignore="UsingOnClickInXml" />
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="-3dp"
+            android:layout_toStartOf="@+id/iv_Left_Arrow1"
+            android:layout_toEndOf="@+id/iv_Left_Arrow"
+            android:gravity="center"
+            android:text="Créer Adherent"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tv_permis_title"
+            android:layout_width="381dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="969dp"
+            android:text="Information permis de conduire"
+            android:textColor="@color/a1_color"
+            android:textSize="24dp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/et_numfixe"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_ville"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="339dp"
+            android:layout_marginEnd="20dp"
+
+
+            android:minHeight="40dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tv_numportable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_ville"
+            android:layout_alignStart="@+id/et_email"
+            android:layout_marginStart="217dp"
+            android:layout_marginTop="317dp"
+            android:text="Telephone portable *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/et_numportable"
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_ville"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="237dp"
+            android:layout_marginTop="340dp"
+            android:layout_marginEnd="20dp"
+
+
+            android:minHeight="40dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <TextView
+            android:id="@+id/tv_paiement_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="1350dp"
+            android:text="Information sur le paiement"
+            android:textColor="@color/a1_color"
+            android:textSize="28dp"
+            android:textStyle="normal" />
+
+        <CheckBox
+            android:id="@+id/chk_ribfourni"
+            android:layout_width="260dp"
+            android:layout_height="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="1571dp"
+            android:layout_marginEnd="94dp"
+            android:text="RIB fourni" />
+
+        <CheckBox
+            android:id="@+id/chk_paiementcaution"
+            android:layout_width="260dp"
+            android:layout_height="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="1505dp"
+            android:layout_marginEnd="97dp"
+            android:text="Paiement caution" />
+
+        <CheckBox
+            android:id="@+id/chk_paiementadhesion"
+            android:layout_width="260dp"
+            android:layout_height="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="1440dp"
+            android:layout_marginEnd="101dp"
+            android:text="Paiement adhesion" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chk_ribfourni"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/rectangle"
+            android:text="Créer l'utilisateur"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/et_lieuobtention"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_ville"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="535dp"
+            android:layout_marginEnd="20dp"
+
+
+            android:minHeight="40dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/et_numpermis"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_ville"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="457dp"
+            android:layout_marginEnd="20dp"
+
+
+            android:minHeight="40dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tv_numfixe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_ville"
+            android:layout_alignStart="@+id/tv_datenaissance"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="316dp"
+            android:text="Telephone fixe"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tv_lieuobtention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_ville"
+            android:layout_alignStart="@+id/tv_datenaissance"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="514dp"
+            android:text="Lieu d'obtention *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tv_numpermis"
+            android:layout_width="234dp"
+            android:layout_height="34dp"
+            android:layout_below="@+id/et_ville"
+            android:layout_alignStart="@+id/tv_datenaissance"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="437dp"
+            android:layout_marginEnd="157dp"
+            android:text="Numero de permis *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+        <DatePicker
+            android:id="@+id/datepicker_obtentionpermis"
+            android:layout_width="416dp"
+            android:layout_height="154dp"
+            android:layout_below="@+id/tv_datenaissance"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="587dp"
+            android:layout_marginEnd="31dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+
+        <TextView
+            android:id="@+id/tv_dateobtention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_ville"
+            android:layout_alignStart="@+id/tv_datenaissance"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="601dp"
+            android:text="Date d'obtention *"
+            android:textColor="@color/a1_color"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+</ScrollView>

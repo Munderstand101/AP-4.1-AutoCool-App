@@ -32,12 +32,12 @@ public class ListFormuleActivity extends AppCompatActivity {
     OkHttpClient client = new OkHttpClient();
     ArrayList<Integer> ListData = new ArrayList();
     long itemId = 0;
+    String nameFormule;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_formule);
-        getSupportActionBar().hide();
 
 
         try{
@@ -51,6 +51,7 @@ public class ListFormuleActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
                 itemId = id;
+                nameFormule = (String) parent.getItemAtPosition(position);
                 Toast.makeText(ListFormuleActivity.this, "Element selectionné : " + (String) parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
 
 //                Log.d("test", String.valueOf(item));
@@ -64,6 +65,18 @@ public class ListFormuleActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ListFormuleActivity.this, ListAbonneFormuleActivity.class);
                 intent.putExtra("idFormule", ListData.get((int) itemId));
+                startActivity(intent);
+            }
+        });
+
+        final Button btnCreerUser = (Button)findViewById(R.id.btn_creerUser);
+        btnCreerUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListFormuleActivity.this, CreateAdherentActivity.class);
+                Log.d("test !!!!", nameFormule);
+                intent.putExtra("idFormule", ListData.get((int) itemId));
+                intent.putExtra("nomFormule", nameFormule);
                 startActivity(intent);
             }
         });
@@ -103,10 +116,16 @@ public class ListFormuleActivity extends AppCompatActivity {
                 JSONArray jsonArrayFormules = null;
                 try {
                     jsonArrayFormules = new JSONArray(responseStr);
+//                    nameFormule = jsonArrayFormules.get(0).
 
                     for (int i = 0; i < jsonArrayFormules.length(); i++) {
+
                         JSONObject jsonClasse = null;
                         jsonClasse = jsonArrayFormules.getJSONObject(i);
+
+                        if(i == 0){
+                            nameFormule = jsonClasse.getString("libelle");
+                        }
 
                         arrayListNomFormules.add(jsonClasse.getString("libelle"));
                         ListData.add(jsonClasse.getInt("id"));

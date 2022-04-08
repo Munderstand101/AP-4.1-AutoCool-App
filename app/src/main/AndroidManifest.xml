@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AutoCool">
         <activity
+            android:name=".CreateAdherentActivity"
+            android:exported="false" />
+        <activity
             android:name=".InformationAbonneFormuleActivity"
             android:exported="false" />
         <activity
@@ -24,7 +27,6 @@
         <activity
             android:name=".ListAdherentActivity"
             android:exported="false"
-            android:label="@string/title_activity_list_adherent"
             android:theme="@style/Theme.AutoCool.NoActionBar" />
         <activity
             android:name=".ListeCategorieVoituresActivity"

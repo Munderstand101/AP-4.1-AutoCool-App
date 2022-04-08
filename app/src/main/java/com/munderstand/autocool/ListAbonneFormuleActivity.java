@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class ListAbonneFormuleActivity extends AppCompatActivity {
     OkHttpClient client = new OkHttpClient();
     ArrayList<Integer> ListIdAbonne = new ArrayList();
     long itemId = 0;
+    int idForm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +40,8 @@ public class ListAbonneFormuleActivity extends AppCompatActivity {
 
         try{
             Intent receiveIntent = getIntent();
-            int id = receiveIntent.getExtras().getInt("idFormule");
-            Log.d("testAbonneFormule", String.valueOf(id));
-            getAdherant(id);
+            idForm = receiveIntent.getExtras().getInt("idFormule");
+            getAdherant(idForm);
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -52,9 +53,7 @@ public class ListAbonneFormuleActivity extends AppCompatActivity {
                 itemId = id;
                 Toast.makeText(ListAbonneFormuleActivity.this, "Personne selectionné : " + (String) parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
 
-//                Log.d("test", String.valueOf(item));
-
-                Intent intent = new Intent(ListAbonneFormuleActivity.this, LoginActivity.class);
+                Intent intent = new Intent(ListAbonneFormuleActivity.this, InformationAbonneFormuleActivity.class);
                 intent.putExtra("idAbonne", ListIdAbonne.get((int) itemId));
                 startActivity(intent);
 
@@ -102,6 +101,10 @@ public class ListAbonneFormuleActivity extends AppCompatActivity {
                         ArrayAdapter<String> arrayAdapterClasses = new ArrayAdapter<String>(ListAbonneFormuleActivity.this,android.R.layout.simple_list_item_1, arrayListNomPrenomAdherent);
 
                         listView.setAdapter(arrayAdapterClasses);
+
+                        if(arrayAdapterClasses.isEmpty()){
+                            Toast.makeText(ListAbonneFormuleActivity.this, "Pas d'adherent", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
 

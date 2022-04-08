@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InformationAbonneFormuleActivity">
 
     <EditText
-        android:id="@+id/et_automatique"
+        android:id="@+id/et_codepostal"
         android:layout_width="167dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_type_Vehicule"
+        android:layout_below="@+id/et_adresse"
         android:layout_marginStart="29dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
-        android:layout_toEndOf="@+id/et_nombre_places"
+        android:layout_toEndOf="@+id/et_ville"
         android:enabled="false"
         android:focusable="false"
         android:minHeight="48dp"
-
         android:textColor="@color/black"
+        android:textSize="15dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/et_station"
+        android:id="@+id/et_nom"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_numero_Vehicule"
+        android:layout_below="@+id/et_dateadhesion"
         android:layout_marginStart="20dp"
         android:layout_marginTop="85dp"
         android:layout_marginEnd="20dp"
@@ -34,13 +40,14 @@
         android:focusable="false"
         android:minHeight="48dp"
         android:textColor="@color/black"
+        android:textSize="15dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/tv_ville"
+        android:id="@+id/tv_prenom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_numero_Vehicule"
+        android:layout_below="@+id/et_dateadhesion"
         android:layout_marginStart="177dp"
         android:layout_marginTop="66dp"
         android:layout_toEndOf="@+id/tv_nom"
@@ -49,25 +56,26 @@
         android:textStyle="normal" />
 
     <EditText
-        android:id="@+id/et_ville"
+        android:id="@+id/et_prenom"
         android:layout_width="167dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_numero_Vehicule"
+        android:layout_below="@+id/et_dateadhesion"
         android:layout_marginStart="29dp"
         android:layout_marginTop="85dp"
         android:layout_marginEnd="20dp"
-        android:layout_toEndOf="@+id/et_station"
+        android:layout_toEndOf="@+id/et_nom"
         android:enabled="false"
         android:focusable="false"
         android:minHeight="48dp"
+        android:textSize="15dp"
         android:textColor="@color/black"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/tv_type_Vehicule"
+        android:id="@+id/tv_adresse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_ville"
+        android:layout_below="@+id/et_prenom"
         android:layout_marginStart="20dp"
         android:layout_marginTop="21dp"
         android:text="Adresse"
@@ -75,25 +83,55 @@
         android:textStyle="normal" />
 
     <EditText
-        android:id="@+id/et_type_Vehicule"
-        android:layout_width="match_parent"
+        android:id="@+id/et_adresse"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_ville"
+        android:layout_below="@+id/et_prenom"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="20dp"
         android:enabled="false"
         android:focusable="false"
         android:minHeight="48dp"
         android:textColor="@color/black"
+        android:textSize="15dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/title_dateadhesion2"
+        android:id="@+id/tv_civilite"
+        android:layout_width="62dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_prenom"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="125dp"
+        android:text="Civilite"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/et_civilite"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_prenom"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="15dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/title_ville"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_type_Vehicule"
-        android:layout_alignStart="@+id/et_nombre_places"
+        android:layout_below="@id/et_adresse"
+        android:layout_alignStart="@+id/et_ville"
         android:layout_marginStart="0dp"
         android:layout_marginTop="21dp"
         android:text="Ville"
@@ -101,10 +139,10 @@
         android:textStyle="normal" />
 
     <EditText
-        android:id="@+id/et_nombre_places"
+        android:id="@+id/et_ville"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_type_Vehicule"
+        android:layout_below="@+id/et_adresse"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
@@ -112,14 +150,15 @@
         android:focusable="false"
         android:minHeight="48dp"
         android:textColor="@color/black"
+        android:textSize="15dp"
 
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/et_kilometrage"
+        android:id="@+id/et_datenaissance"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_nombre_places"
+        android:layout_below="@+id/et_ville"
         android:layout_marginStart="20dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="20dp"
@@ -127,31 +166,33 @@
         android:focusable="false"
         android:minHeight="40dp"
         android:textColor="@color/black"
+        android:textSize="15dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/et_niveau_essence"
+        android:id="@+id/et_email"
         android:layout_width="164dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_automatique"
+        android:layout_below="@+id/et_codepostal"
         android:layout_marginStart="32dp"
 
         android:layout_marginTop="32dp"
         android:layout_marginEnd="20dp"
-        android:layout_toEndOf="@+id/et_kilometrage"
+        android:layout_toEndOf="@+id/et_datenaissance"
 
         android:enabled="false"
         android:focusable="false"
         android:minHeight="48dp"
         android:textColor="@color/black"
+        android:textSize="15dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/tv_niveau_essence"
+        android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_nombre_places"
-        android:layout_alignStart="@+id/et_niveau_essence"
+        android:layout_below="@+id/et_ville"
+        android:layout_alignStart="@+id/et_email"
         android:layout_marginStart="2dp"
         android:layout_marginTop="14dp"
         android:text="Email"
@@ -159,11 +200,11 @@
         android:textStyle="normal" />
 
     <TextView
-        android:id="@+id/tv_kilometrage"
+        android:id="@+id/tv_datenaissance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_nombre_places"
-        android:layout_alignStart="@+id/et_kilometrage"
+        android:layout_below="@+id/et_ville"
+        android:layout_alignStart="@+id/et_datenaissance"
         android:layout_marginStart="0dp"
         android:layout_marginTop="13dp"
         android:text="Date de naissance"
@@ -174,8 +215,8 @@
         android:id="@+id/tv_numfixe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_nombre_places"
-        android:layout_alignStart="@+id/et_kilometrage"
+        android:layout_below="@+id/et_ville"
+        android:layout_alignStart="@+id/et_datenaissance"
         android:layout_marginStart="-1dp"
         android:layout_marginTop="98dp"
         android:text="Telephone fixe"
@@ -186,13 +227,14 @@
         android:id="@+id/et_numfixe"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_nombre_places"
+        android:layout_below="@+id/et_ville"
         android:layout_marginStart="20dp"
         android:layout_marginTop="117dp"
         android:layout_marginEnd="20dp"
         android:enabled="false"
         android:focusable="false"
         android:minHeight="40dp"
+        android:textSize="15dp"
         android:textColor="@color/black"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -200,8 +242,8 @@
         android:id="@+id/tv_numportable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_nombre_places"
-        android:layout_alignStart="@+id/et_niveau_essence"
+        android:layout_below="@+id/et_ville"
+        android:layout_alignStart="@+id/et_email"
         android:layout_marginStart="0dp"
         android:layout_marginTop="98dp"
         android:text="Telephone"
@@ -209,10 +251,10 @@
         android:textStyle="normal" />
 
     <EditText
-        android:id="@+id/et_numero"
+        android:id="@+id/et_numportable"
         android:layout_width="144dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_nombre_places"
+        android:layout_below="@+id/et_ville"
         android:layout_alignParentStart="true"
         android:layout_marginStart="232dp"
         android:layout_marginTop="119dp"
@@ -220,15 +262,16 @@
         android:enabled="false"
         android:focusable="false"
         android:minHeight="40dp"
+        android:textSize="15dp"
         android:textColor="@color/black"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/tv_automatique"
+        android:id="@+id/tv_codepostal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_type_Vehicule"
-        android:layout_alignStart="@+id/et_automatique"
+        android:layout_below="@id/et_adresse"
+        android:layout_alignStart="@+id/et_codepostal"
         android:layout_marginStart="0dp"
         android:layout_marginTop="18dp"
         android:text="Code postal"
@@ -239,7 +282,7 @@
         android:id="@+id/tv_nom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_numero_Vehicule"
+        android:layout_below="@+id/et_dateadhesion"
         android:layout_marginStart="20dp"
         android:layout_marginTop="66dp"
         android:text="Nom"
@@ -269,21 +312,22 @@
         android:textSize="28dp"
         android:textStyle="normal" />
 
+
     <EditText
-        android:id="@+id/et_numero_Vehicule"
-        android:layout_width="361dp"
-        android:layout_height="28dp"
+        android:id="@+id/et_dateadhesion"
+        android:layout_width="369dp"
+        android:layout_height="37dp"
         android:layout_below="@+id/tv_title"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="39dp"
         android:layout_marginEnd="20dp"
         android:enabled="false"
         android:focusable="false"
         android:minHeight="48dp"
         android:textColor="@color/black"
+        android:textSize="15dp"
 
         tools:ignore="SpeakableTextPresentCheck" />
-
 
     <ImageView
         android:id="@+id/iv_Left_Arrow"
@@ -310,30 +354,29 @@
         app:srcCompat="@drawable/ic_edit"
         tools:ignore="UsingOnClickInXml" />
 
+
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="150dp"
         android:layout_height="30dp"
-
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="-3dp"
         android:layout_toStartOf="@+id/iv_Left_Arrow1"
         android:layout_toEndOf="@+id/iv_Left_Arrow"
         android:gravity="center"
+        android:textSize="15dp"
         android:text="Details Adherent"
-        android:textColor="@color/black"
-        android:textSize="18dp" />
-
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/btn_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_kilometrage"
+        android:layout_below="@+id/et_datenaissance"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="362dp"
+        android:layout_marginTop="600dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="12dp"
         android:background="@drawable/rectangle"
@@ -354,4 +397,182 @@
         android:textSize="28dp"
         android:textStyle="normal" />
 
+    <EditText
+        android:id="@+id/et_dateobtention"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginEnd="40dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="40dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/et_numpermis"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="20dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="40dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_numpermis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_alignStart="@+id/et_datenaissance"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="274dp"
+        android:text="Numero de permis"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_lieuobtention"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_alignStart="@+id/et_datenaissance"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="359dp"
+        android:text="Lieu d'obtention"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/et_lieuobtention"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="378dp"
+        android:layout_marginEnd="20dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="40dp"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_dateobtention"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_alignStart="@+id/et_datenaissance"
+        android:layout_marginStart="211dp"
+        android:layout_marginTop="362dp"
+        android:text="Date d'obtention"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:id="@+id/tv_paiement_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="823dp"
+        android:text="Information sur le paiement"
+        android:textColor="@color/a1_color"
+        android:textSize="28dp"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/et_ribfourni"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="617dp"
+        android:layout_marginEnd="42dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="40dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/et_paiementcaution"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="619dp"
+        android:layout_marginEnd="20dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="40dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/et_paiementadhesion"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="531dp"
+        android:layout_marginEnd="20dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:minHeight="40dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_paiementcaution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_alignStart="@+id/et_datenaissance"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="600dp"
+        android:text="Paiement caution"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_ribfourni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_alignStart="@+id/et_datenaissance"
+        android:layout_marginStart="206dp"
+        android:layout_marginTop="596dp"
+        android:text="Rib fourni"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_paiementadhesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_alignStart="@+id/et_datenaissance"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="515dp"
+        android:text="Paiement adhesion"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal" />
+
 </RelativeLayout>
+</ScrollView>
