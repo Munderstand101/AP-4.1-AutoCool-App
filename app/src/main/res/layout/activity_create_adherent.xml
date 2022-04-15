@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView
 xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -156,7 +157,8 @@ android:fillViewport="true">
             android:layout_marginTop="-489dp"
             android:layout_marginEnd="52dp"
             android:calendarViewShown="false"
-            android:datePickerMode="spinner" />
+            android:datePickerMode="spinner"
+            android:maxDate="getDatePicker()" />
 
         <EditText
             android:id="@+id/et_email"
@@ -424,7 +426,7 @@ android:fillViewport="true">
             android:text="Paiement adhesion" />
 
         <Button
-            android:id="@+id/btn_back"
+            android:id="@+id/btn_creerUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/chk_ribfourni"

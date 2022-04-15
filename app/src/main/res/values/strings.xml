@@ -1,5 +1,5 @@
-<resources>
 
+<resources>
     <string name="app_name">AutoCool</string>
 
     <string name="str_login">Se connecter</string>
@@ -29,6 +29,7 @@
     <string name="str_kilometrage">Kilométrage :</string>
     <string name="str_niveau_essence">Niveau essence :</string>
     <string name="str_retour_la_liste">Retour à la liste</string>
+    <string name="str_datepicker">nameForm</string>
 
 
 </resources>
