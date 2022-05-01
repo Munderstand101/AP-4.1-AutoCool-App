@@ -2,13 +2,16 @@ package com.munderstand.autocool;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -29,6 +32,10 @@ public class ListeCategorieVoituresActivity extends AppCompatActivity {
 
     String responseStr ;
     OkHttpClient client = new OkHttpClient();
+    int id_selected = 0;
+    private ArrayList<VoitureVilleLieuModel> carsModelArrayList;
+    private ListView listView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +44,58 @@ public class ListeCategorieVoituresActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
-
-
         Spinner spinner = (Spinner)findViewById(R.id.dropdown_menu);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String item = parentView.getItemAtPosition(position).toString();
+                populateList3((String)parentView.getItemAtPosition(position));
+            }
 
-                Toast.makeText(parentView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+            private void populateList3(String categ){
+                OkHttpClient client = new OkHttpClient();
+                Request request = new Request.Builder().url(ParamAPI.url+"/api/vehicule/AllVehiculeVilleLieuByCate/"+categ).build();
+
+                Call call = client.newCall(request);
+                call.enqueue(new Callback() {
+
+                    public void onResponse(Call call, Response response) throws IOException {
+                        String responseStr = response.body().string();
+                        ArrayList<VoitureVilleLieuModel> list = new ArrayList<>();
+
+                        JSONArray jsonArrayClasses = null;
+                        try {
+                            jsonArrayClasses = new JSONArray(responseStr);
+
+                            for (int i = 0; i < jsonArrayClasses.length(); i++) {
+                                JSONObject jsonClasse = null;
+                                jsonClasse = jsonArrayClasses.getJSONObject(i);
+                                VoitureVilleLieuModel carModel = new VoitureVilleLieuModel();
+                                carModel.setLieu(jsonClasse.getString("libelle_lieu"));
+                                carModel.setVille(jsonClasse.getString("libelle_ville"));
+                                carModel.setId(jsonClasse.getInt("id"));
+                                list.add(carModel);
+                            }
+
+
+                            CarsAdapter carAdapter = new CarsAdapter(ListeCategorieVoituresActivity.this, list);
+
+                            runOnUiThread(()->{
+                                listView.setAdapter(carAdapter);
+                            });
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    public void onFailure(Call call, IOException e) {
+                        Log.d("Test", "erreur!!! connexion impossible");
+                        Log.d("Test", String.valueOf(e));
+                    }
+
+                });
+
+
             }
 
             @Override
@@ -55,32 +105,21 @@ public class ListeCategorieVoituresActivity extends AppCompatActivity {
 
         });
 
-        ListView lv_Voitures = (ListView)findViewById(R.id.lv_Voitures);
-        lv_Voitures.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                // your code here
-                String item = parentView.getItemAtPosition(position).toString();
+        listView = findViewById(R.id.lv_Voitures);
 
-                Toast.makeText(parentView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-
-//                Intent mIntent=new Intent(dynamic_spinner_main.this,sampleLocalization.class);
-//                mIntent.putExtra("lang", m_myDynamicSpinner.getItemIdAtPosition(position));
-//                System.out.println("Spinner value...."+m_myDynamicSpinner.getSelectedItem().toString());
-//                startActivity(mIntent);
-            }
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                // your code here
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ListeCategorieVoituresActivity.this, DetailsVoitureActivity.class);
+                String id_categ= ((TextView)view.findViewById(R.id.tvId)).getText().toString();
+                intent.putExtra("id", Integer.parseInt(id_categ));
+                startActivity(intent);
             }
-
         });
 
         try {
             getAllCategs();
-            getAllVoitures();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -88,10 +127,10 @@ public class ListeCategorieVoituresActivity extends AppCompatActivity {
 
     public void getAllCategs() throws IOException {
 
-        ArrayList arrayNomFormule = new ArrayList<String>();
+        ArrayList arrayCategs = new ArrayList<String>();
 
         Request request = new Request.Builder()
-                .url(ParamAPI.url + "/api/carcateg")
+                .url(ParamAPI.url + "/api/categorie-vehicule/All")
                 .build();
 
         Call call = client.newCall(request);
@@ -108,7 +147,7 @@ public class ListeCategorieVoituresActivity extends AppCompatActivity {
                         for (int i = 0; i < jsonNomFormule.length(); i++) {
                             JSONObject jsonNom = null;
                             jsonNom = jsonNomFormule.getJSONObject(i);
-                            arrayNomFormule.add(jsonNom.getString("nom"));
+                            arrayCategs.add(jsonNom.getString("libelle"));
                         }
 
                     } catch (JSONException e) {
@@ -120,14 +159,14 @@ public class ListeCategorieVoituresActivity extends AppCompatActivity {
                         public void run() {
                             Spinner s = (Spinner) findViewById(R.id.dropdown_menu);
                             ArrayAdapter<String> adapter = new ArrayAdapter<String>(ListeCategorieVoituresActivity.this,
-                                    android.R.layout.simple_spinner_item, arrayNomFormule);
+                                    android.R.layout.simple_spinner_item, arrayCategs);
                             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             s.setAdapter(adapter);
                         }
                     });
 
                 } else {
-                    Log.d("Test", "Erreur obtention des libelle formule !");
+                    Log.d("Test", "Erreur !");
                 }
             }
 
@@ -138,84 +177,12 @@ public class ListeCategorieVoituresActivity extends AppCompatActivity {
         });
     }
 
-
-    public void getAllVoitures() throws IOException {
-
-        OkHttpClient client = new OkHttpClient();
-        ArrayList arrayListNomClasses = new ArrayList<String>();
-
-        Request request = new Request.Builder()
-                .url(ParamAPI.url+"/api/mission3/cars")
-                .build();
-
-        Call call = client.newCall(request);
-        call.enqueue(new Callback() {
-
-            public void onResponse(Call call, Response response) throws IOException {
-                String responseStr = response.body().string();
-                //Log.d("Test", String.valueOf(responseStr));
-
-
-                JSONArray jsonArrayClasses = null;
-                try {
-                    jsonArrayClasses = new JSONArray(responseStr);
-
-                    for (int i = 0; i < jsonArrayClasses.length(); i++) {
-                        JSONObject jsonClasse = null;
-                        jsonClasse = jsonArrayClasses.getJSONObject(i);
-                        arrayListNomClasses.add(jsonClasse.getString("libelle"));
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-/*
-                try {
-                    JSONObject jsonObject = new JSONObject(responseStr);
-                    JSONArray jsonArray = jsonObject.getJSONArray("features");
-                    for (int i = 0; i <= jsonArray.length(); i++) {
-                        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                        if (jsonObject1.has("geomerty")){
-                            JSONArray jsonArray1 = jsonObject1.getJSONArray("geomerty");
-                            for (int j = 0; j <= jsonArray1.length(); j++){
-                                if (jsonObject1.has("coordinates")){
-                                    JSONArray jsonArray2 = jsonObject1.getJSONArray("coordinates");
-                                    for (int k = 0; k <= jsonArray2.length();k++){
-                                        JSONArray jsonArray3 = jsonArray2.getJSONArray(k);
-                                        for (int l =0; l <= jsonArray3.length(); l++){
-                                            Log.d("ABC", String.valueOf(jsonArray3.getDouble(l)));
-                                        }
-
-                                    }
-                                }
-                            }
-                        }
-
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                */
-
-                ListView listViewClasses = findViewById(R.id.lv_Voitures);
-
-                ArrayAdapter<String> arrayAdapterClasses = new ArrayAdapter<String>(ListeCategorieVoituresActivity.this, android.R.layout.simple_list_item_1, arrayListNomClasses);
-
-                runOnUiThread(()->{
-                    listViewClasses.setAdapter(arrayAdapterClasses);
-                });
-
-            }
-
-            public void onFailure(Call call, IOException e) {
-                Log.d("Test", "erreur!!! connexion impossible");
-                Log.d("Test", String.valueOf(e));
-            }
-
-        });
-
+    public void fBack_Click(View view) {
+        super.onBackPressed();
     }
 
-
+    public void fAdd_Click(View view) {
+        Intent intent = new Intent(ListeCategorieVoituresActivity.this, AjouterVoitureActivity.class);
+        startActivity(intent);
+    }
 }

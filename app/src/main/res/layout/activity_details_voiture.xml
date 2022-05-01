@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".DetailsVoitureActivity">
 
+    <Button
+        android:id="@+id/btn_supprimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_back"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rectangle"
+        android:text="Supprimer"
+        android:textAllCaps="false"
+        android:textColor="@color/red"
+        android:textSize="20dp"
+        android:visibility="invisible" />
+
     <EditText
         android:id="@+id/et_kilometrage"
         android:layout_width="160dp"
@@ -123,7 +139,7 @@
         android:layout_below="@+id/tv_title"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="@string/str_numero_Vehicule"
+        android:text="@string/str_numero_et_nom_Vehicule"
         android:textColor="@color/a1_color"
         android:textStyle="normal" />
 
@@ -143,18 +159,18 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/tv_station"
+        android:id="@+id/tv_ville"
+        android:text="@string/str_ville"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_numero_Vehicule"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="@string/str_station"
         android:textColor="@color/a1_color"
         android:textStyle="normal" />
 
     <EditText
-        android:id="@+id/et_station"
+        android:id="@+id/et_ville"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_numero_Vehicule"
@@ -168,27 +184,39 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
 
+    <Spinner
+        android:id="@+id/ddm_ville"
+
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_numero_Vehicule"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="20dp"
+        android:minHeight="48dp"
+        android:visibility="invisible" />
+
     <TextView
-        android:id="@+id/tv_ville"
+        android:id="@+id/tv_station"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_numero_Vehicule"
-        android:layout_marginStart="153dp"
+        android:layout_alignStart="@+id/et_station"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="20dp"
-        android:layout_toEndOf="@+id/tv_station"
-        android:text="@string/str_ville"
+        android:text="@string/str_station"
         android:textColor="@color/a1_color"
         android:textStyle="normal" />
 
     <EditText
-        android:id="@+id/et_ville"
+        android:id="@+id/et_station"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_numero_Vehicule"
         android:layout_marginStart="25dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
-        android:layout_toEndOf="@+id/et_station"
+        android:layout_toEndOf="@+id/et_ville"
         android:enabled="false"
         android:focusable="false"
         android:minHeight="48dp"
@@ -206,6 +234,20 @@
         android:textColor="@color/a1_color"
         android:textStyle="normal" />
 
+
+    <TextView
+        android:id="@+id/tv_type_Vehicule2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/tv_type_Vehicule"
+        android:text="@string/str_type_Vehicule"
+        android:textColor="@color/a1_color"
+        android:textStyle="normal"
+        android:visibility="invisible" />
+
     <EditText
         android:id="@+id/et_type_Vehicule"
         android:layout_width="match_parent"
@@ -219,13 +261,6 @@
         android:minHeight="48dp"
         android:textColor="@color/black"
         tools:ignore="SpeakableTextPresentCheck" />
-
-
-
-
-
-
-
 
     <ImageView
         android:id="@+id/iv_Left_Arrow"
@@ -284,5 +319,70 @@
         android:textColor="@color/white"
         android:textSize="20dp" />
 
+
+    <Spinner
+        android:id="@+id/ddm_categ"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_station"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:minHeight="48dp"
+        android:visibility="invisible" />
+
+    <Spinner
+        android:id="@+id/ddm_type"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_marginStart="25dp"
+
+        android:layout_marginTop="40dp"
+        android:layout_toEndOf="@+id/ddm_categ"
+
+        android:minHeight="48dp"
+        android:visibility="invisible" />
+
+    <Spinner
+        android:id="@+id/ddm_type2"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ville"
+        android:layout_marginStart="25dp"
+
+        android:layout_marginTop="40dp"
+        android:layout_toEndOf="@+id/ddm_categ"
+
+        android:minHeight="48dp"
+        android:visibility="invisible" />
+
+    <Spinner
+        android:id="@+id/ddm_auto"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ddm_type"
+        android:layout_alignStart="@+id/et_automatique"
+
+        android:layout_marginStart="0dp"
+
+        android:layout_marginTop="40dp"
+        android:minHeight="48dp"
+        android:visibility="invisible" />
+
+    <Spinner
+        android:id="@+id/ddm_lieu"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_numero_Vehicule"
+        android:layout_marginStart="25dp"
+
+        android:layout_marginTop="40dp"
+        android:layout_toEndOf="@+id/et_ville"
+
+        android:minHeight="48dp"
+        android:visibility="invisible"
+        android:enabled="false"
+        android:focusable="false"/>
 
 </RelativeLayout>

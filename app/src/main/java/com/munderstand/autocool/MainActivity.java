@@ -20,19 +20,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
-//        Intent intent = new Intent(this, LoginActivity.class);
-//        startActivity(intent);
-
-        /*new Handler().postDelayed(new Runnable(){
-            @Override
-            public void run() {
-
-                Intent intent = new Intent(this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }, SPLASH_DISPLAY_LENGTH);*/
-
     }
 
 

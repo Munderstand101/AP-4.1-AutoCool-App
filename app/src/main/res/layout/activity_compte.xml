@@ -47,17 +47,34 @@
         android:textColor="@color/black"
         android:textSize="18dp" />
 
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/iv_Logo"
+        android:layout_alignStart="@+id/iv_Logo"
+        android:layout_alignEnd="@+id/iv_Logo"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="-5dp"
+        android:gravity="center"
+        android:text="Munderstand (Admin)"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
     <ImageView
         android:id="@+id/iv_Logo"
         android:layout_width="299dp"
         android:layout_height="99dp"
         android:layout_below="@+id/tv_title"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="53dp"
+        android:layout_marginStart="-2dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="59dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toStartOf="@+id/iv_Left_Arrow1"
+        android:layout_toEndOf="@+id/iv_Left_Arrow"
         android:padding="10dp"
         app:srcCompat="@drawable/ic_launcher_background" />
+
+
 
 </RelativeLayout>

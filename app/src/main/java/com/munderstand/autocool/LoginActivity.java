@@ -4,15 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.BreakIterator;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -34,15 +39,9 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         this.setContentView(R.layout.activity_login);
 
-        //Remove title bar
-        //this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //Remove notification bar
-        //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-
-
         final EditText textLogin = findViewById(R.id.et_username);
         final EditText textMdp = findViewById(R.id.et_password);
+
         textLogin.setText("Munderstand");
         textMdp.setText("H4kun4m4t4t4");
 
@@ -58,12 +57,9 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
-        
-
     }
+
     public void fRegister_Click(View view){
-        Log.d("Test","Register !");
         Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(intent);
     }
@@ -74,19 +70,19 @@ public class LoginActivity extends AppCompatActivity {
         final EditText textMdp = findViewById(R.id.et_password);
 
         JSONObject jsonObject = new JSONObject();
+
         try {
             jsonObject.put("username", textLogin.getText().toString());
             jsonObject.put("password", textMdp.getText().toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
         RequestBody body = RequestBody.create(JSON, jsonObject.toString());
 
-        Log.d("Test",jsonObject.toString());
-
         Request request = new Request.Builder()
-                .url(ParamAPI.url+"/api/login")
+                .url(ParamAPI.url+"/api/main/login")
                 .post(body)
                 .build();
 
@@ -94,35 +90,35 @@ public class LoginActivity extends AppCompatActivity {
         call.enqueue(new Callback() {
 
             public  void onResponse(Call call, Response response) throws IOException {
-
                 responseStr = response.body().string();
-
-                if (responseStr.compareTo("false")!=0){
-                    try {
-                        JSONObject etudiant = new JSONObject(responseStr);
-                        Log.d("Test",etudiant.getString("username") + " est  connecté");
-
+                try {
+                    JSONObject user = new JSONObject(responseStr);
+                    if (user.has("id")) {
                         Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
-                        intent.putExtra("username", etudiant.toString());
+                        intent.putExtra("user", user.toString());
                         startActivity(intent);
-
+                    } else {
+                        new Handler(Looper.getMainLooper()).post(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    Toast.makeText(LoginActivity.this, "Erreur de connexion ! \n "+user.getString("message"), Toast.LENGTH_LONG).show();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
                     }
-                    catch(JSONException e){
-                        Log.d("Test", String.valueOf(e));
-                        //  Toast.makeText(MainActivity.this, "Erreur de connexion !!!! !", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Log.d("Test","Login ou mot de  passe non valide !");
+                } catch (JSONException e) {
+                    Log.d("JSONException", String.valueOf(e));
                 }
             }
-
             public void onFailure(Call call, IOException e)
             {
-                Log.d("Test", "Erreur!!! connexion impossible \n"+String.valueOf(e));
+                Log.d("IOException", String.valueOf(e));
             }
 
         });
     }
-
 
 }
