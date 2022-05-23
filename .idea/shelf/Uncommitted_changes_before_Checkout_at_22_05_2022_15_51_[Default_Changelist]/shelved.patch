@@ -1,0 +1,115 @@
+Index: app/src/main/java/com/munderstand/autocool/MenuActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.munderstand.autocool;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\n\r\npublic class MenuActivity extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_menu);\r\n        getSupportActionBar().hide();\r\n\r\n        final Button buttonListeVoiture = (Button) findViewById(R.id.btn_ListeVoiture);\r\n        buttonListeVoiture.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                Intent intent = new Intent(MenuActivity.this, ListeVoituresActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n        final Button buttonLesAdherents = (Button) findViewById(R.id.btn_ListeAdherent);\r\n        buttonLesAdherents.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                Intent intent = new Intent(MenuActivity.this, ListFormuleActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n    }\r\n\r\n    public void fSettings_Click(View view) {\r\n    }\r\n\r\n    public void fUser_Click(View view) {\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/munderstand/autocool/MenuActivity.java b/app/src/main/java/com/munderstand/autocool/MenuActivity.java
+--- a/app/src/main/java/com/munderstand/autocool/MenuActivity.java	(revision c4ffdd7741100a573b85ce7946e3273f9314869c)
++++ b/app/src/main/java/com/munderstand/autocool/MenuActivity.java	(date 1653225914429)
+@@ -33,6 +33,15 @@
+             }
+         });
+ 
++        final Button buttonTarifs = (Button) findViewById(R.id.btn_ListeTarifs);
++        buttonTarifs.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                Intent intent = new Intent(MenuActivity.this, ListFormuleActivity.class);
++                startActivity(intent);
++            }
++        });
++
+     }
+ 
+     public void fSettings_Click(View view) {
+Index: app/src/main/res/layout/activity_menu.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MenuActivity\">\r\n\r\n    <ImageView\r\n        android:id=\"@+id/iv_Left_Arrow\"\r\n        android:layout_width=\"40dp\"\r\n        android:layout_height=\"20dp\"\r\n        android:layout_alignParentStart=\"true\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_marginStart=\"15dp\"\r\n        android:layout_marginTop=\"17dp\"\r\n        android:onClick=\"fBack_Click\"\r\n        app:srcCompat=\"@drawable/ic_prev\"\r\n        tools:ignore=\"UsingOnClickInXml\" />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/iv_Left_Arrow1\"\r\n        android:layout_width=\"40dp\"\r\n        android:layout_height=\"20dp\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_alignParentEnd=\"true\"\r\n        android:layout_marginTop=\"17dp\"\r\n        android:layout_marginEnd=\"15dp\"\r\n        android:layout_marginBottom=\"44dp\"\r\n        android:onClick=\"fAjouter_Click\"\r\n        app:srcCompat=\"@drawable/ic_plus2\"\r\n        tools:ignore=\"UsingOnClickInXml\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/tv_title\"\r\n        android:layout_width=\"150dp\"\r\n        android:layout_height=\"30dp\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_marginStart=\"0dp\"\r\n        android:layout_marginTop=\"14dp\"\r\n        android:layout_marginEnd=\"0dp\"\r\n        android:layout_toStartOf=\"@+id/iv_Left_Arrow1\"\r\n        android:layout_toEndOf=\"@+id/iv_Left_Arrow\"\r\n        android:gravity=\"center\"\r\n        android:text=\"Menu\"\r\n        android:textColor=\"@color/black\"\r\n        android:textSize=\"18dp\" />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/iv_Logo\"\r\n        android:layout_width=\"278dp\"\r\n        android:layout_height=\"87dp\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_centerHorizontal=\"true\"\r\n        android:layout_marginTop=\"50dp\"\r\n        android:padding=\"10dp\"\r\n        app:srcCompat=\"@drawable/ic_logo2\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/btn_ListeVoiture\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_below=\"@+id/iv_Logo\"\r\n        android:layout_alignParentStart=\"true\"\r\n        android:layout_alignParentEnd=\"true\"\r\n        android:layout_marginStart=\"29dp\"\r\n        android:layout_marginTop=\"35dp\"\r\n        android:layout_marginEnd=\"31dp\"\r\n        android:background=\"@drawable/rectangle\"\r\n        android:text=\"Gérer les voitures\"\r\n        android:textAllCaps=\"false\"\r\n        android:textColor=\"@color/white\"\r\n        android:textSize=\"20dp\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/btn_ListeAdherent\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_below=\"@+id/iv_Logo\"\r\n        android:layout_alignParentStart=\"true\"\r\n        android:layout_alignParentEnd=\"true\"\r\n        android:layout_marginStart=\"29dp\"\r\n        android:layout_marginTop=\"122dp\"\r\n        android:layout_marginEnd=\"30dp\"\r\n        android:background=\"@drawable/rectangle\"\r\n        android:text=\"Gérer les adhérents\"\r\n        android:textAllCaps=\"false\"\r\n        android:textColor=\"@color/white\"\r\n        android:textSize=\"20dp\" />\r\n\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_menu.xml b/app/src/main/res/layout/activity_menu.xml
+--- a/app/src/main/res/layout/activity_menu.xml	(revision c4ffdd7741100a573b85ce7946e3273f9314869c)
++++ b/app/src/main/res/layout/activity_menu.xml	(date 1653225466092)
+@@ -88,5 +88,21 @@
+         android:textColor="@color/white"
+         android:textSize="20dp" />
+ 
++    <Button
++        android:id="@+id/btn_ListeTarifs"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@+id/iv_Logo"
++        android:layout_alignParentStart="true"
++        android:layout_alignParentEnd="true"
++        android:layout_marginStart="29dp"
++        android:layout_marginTop="199dp"
++        android:layout_marginEnd="30dp"
++        android:background="@drawable/rectangle"
++        android:text="Gérer les tarifs"
++        android:textAllCaps="false"
++        android:textColor="@color/white"
++        android:textSize="20dp" />
++
+ 
+ </RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/munderstand/autocool/LoginActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.munderstand.autocool;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.util.Log;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\n\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\nimport java.io.IOException;\r\n\r\nimport okhttp3.Call;\r\nimport okhttp3.Callback;\r\nimport okhttp3.FormBody;\r\nimport okhttp3.MediaType;\r\nimport okhttp3.OkHttpClient;\r\nimport okhttp3.Request;\r\nimport okhttp3.RequestBody;\r\nimport okhttp3.Response;\r\n\r\npublic class LoginActivity extends AppCompatActivity {\r\n\r\n    String responseStr ;\r\n    OkHttpClient client = new OkHttpClient();\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        getSupportActionBar().hide();\r\n        this.setContentView(R.layout.activity_login);\r\n\r\n        //Remove title bar\r\n        //this.requestWindowFeature(Window.FEATURE_NO_TITLE);\r\n        //Remove notification bar\r\n        //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);\r\n\r\n\r\n\r\n        final EditText textLogin = findViewById(R.id.et_username);\r\n        final EditText textMdp = findViewById(R.id.et_password);\r\n        textLogin.setText(\"oscar\");\r\n        textMdp.setText(\"oscar\");\r\n\r\n        final Button buttonValiderAuthentification = (Button)findViewById(R.id.btn_login);\r\n        buttonValiderAuthentification.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                //Appel de la fonction authentification\r\n                try {\r\n                    authentification();\r\n                }catch (IOException e) {\r\n                    e.printStackTrace();\r\n                }\r\n            }\r\n        });\r\n\r\n\r\n\r\n    }\r\n    public void fRegister_Click(View view){\r\n        Log.d(\"Test\",\"Register !\");\r\n        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void authentification() throws IOException {\r\n\r\n        final EditText textLogin = findViewById(R.id.et_username);\r\n        final EditText textMdp = findViewById(R.id.et_password);\r\n\r\n        JSONObject jsonObject = new JSONObject();\r\n        try {\r\n            jsonObject.put(\"username\", textLogin.getText().toString());\r\n            jsonObject.put(\"password\", textMdp.getText().toString());\r\n        } catch (JSONException e) {\r\n            e.printStackTrace();\r\n        }\r\n        MediaType JSON = MediaType.parse(\"application/json; charset=utf-8\");\r\n        RequestBody body = RequestBody.create(JSON, jsonObject.toString());\r\n\r\n        Log.d(\"Test\",jsonObject.toString());\r\n\r\n        Request request = new Request.Builder()\r\n                .url(ParamAPI.url+\"/api/login\")\r\n                .post(body)\r\n                .build();\r\n\r\n        Call call = client.newCall(request);\r\n        call.enqueue(new Callback() {\r\n\r\n            public  void onResponse(Call call, Response response) throws IOException {\r\n\r\n                responseStr = response.body().string();\r\n\r\n                if (responseStr.compareTo(\"false\")!=0){\r\n                    try {\r\n                        JSONObject etudiant = new JSONObject(responseStr);\r\n                        Log.d(\"Test\",etudiant.getString(\"username\") + \" est  connecté\");\r\n\r\n\r\n\r\n                        Intent intent = new Intent(LoginActivity.this, MenuActivity.class);\r\n                        intent.putExtra(\"username\", etudiant.toString());\r\n                        startActivity(intent);\r\n\r\n                    }\r\n                    catch(JSONException e){\r\n                        Log.d(\"Test\", String.valueOf(e));\r\n                        //  Toast.makeText(MainActivity.this, \"Erreur de connexion !!!! !\", Toast.LENGTH_SHORT).show();\r\n                    }\r\n                } else {\r\n                    Log.d(\"Test\",\"Login ou mot de  passe non valide !\");\r\n                }\r\n            }\r\n\r\n            public void onFailure(Call call, IOException e)\r\n            {\r\n                Log.d(\"Test\", \"Erreur!!! connexion impossible \\n\"+String.valueOf(e));\r\n            }\r\n\r\n        });\r\n    }\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/munderstand/autocool/LoginActivity.java b/app/src/main/java/com/munderstand/autocool/LoginActivity.java
+--- a/app/src/main/java/com/munderstand/autocool/LoginActivity.java	(revision c4ffdd7741100a573b85ce7946e3273f9314869c)
++++ b/app/src/main/java/com/munderstand/autocool/LoginActivity.java	(date 1653138165021)
+@@ -80,6 +80,7 @@
+         } catch (JSONException e) {
+             e.printStackTrace();
+         }
++
+         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+         RequestBody body = RequestBody.create(JSON, jsonObject.toString());
+ 
+Index: app/src/main/java/com/munderstand/autocool/ParamAPI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.munderstand.autocool;\r\n\r\npublic class ParamAPI {\r\n    public static String url = \"http://172.19.229.47:8000\";\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/munderstand/autocool/ParamAPI.java b/app/src/main/java/com/munderstand/autocool/ParamAPI.java
+--- a/app/src/main/java/com/munderstand/autocool/ParamAPI.java	(revision c4ffdd7741100a573b85ce7946e3273f9314869c)
++++ b/app/src/main/java/com/munderstand/autocool/ParamAPI.java	(date 1653135380909)
+@@ -1,7 +1,7 @@
+ package com.munderstand.autocool;
+ 
+ public class ParamAPI {
+-    public static String url = "http://172.19.229.47:8000";
++    public static String url = "http://192.168.1.22:8000";
+ 
+ 
+ 
+Index: app/src/main/res/xml/network_security_config.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<network-security-config>\r\n    <domain-config cleartextTrafficPermitted=\"true\">\r\n        <domain includeSubdomains=\"true\">172.19.229.47</domain>\r\n    </domain-config>\r\n</network-security-config>\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/xml/network_security_config.xml b/app/src/main/res/xml/network_security_config.xml
+--- a/app/src/main/res/xml/network_security_config.xml	(revision c4ffdd7741100a573b85ce7946e3273f9314869c)
++++ b/app/src/main/res/xml/network_security_config.xml	(date 1653135384470)
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <network-security-config>
+     <domain-config cleartextTrafficPermitted="true">
+-        <domain includeSubdomains="true">172.19.229.47</domain>
++        <domain includeSubdomains="true">192.168.1.22</domain>
+     </domain-config>
+ </network-security-config>
+ 

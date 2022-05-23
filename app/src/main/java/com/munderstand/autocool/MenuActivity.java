@@ -33,6 +33,16 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        final Button buttonLesTarifs = (Button) findViewById(R.id.btn_GererTarifs);
+        buttonLesTarifs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, ListFormulesTarifsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     public void fSettings_Click(View view) {

@@ -42,7 +42,7 @@
         android:layout_toStartOf="@+id/iv_Left_Arrow1"
         android:layout_toEndOf="@+id/iv_Left_Arrow"
         android:gravity="center"
-        android:text="Menu"
+        android:text="Menu1"
         android:textColor="@color/black"
         android:textSize="18dp" />
 

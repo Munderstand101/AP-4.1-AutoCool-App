@@ -50,6 +50,12 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
+            android:name=".ListFormulesTarifsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShowTarifsActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>

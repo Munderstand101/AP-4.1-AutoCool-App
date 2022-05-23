@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuActivity">
+    tools:context=".ListFormulesTarifsActivity">
 
     <ImageView
         android:id="@+id/iv_Left_Arrow"
@@ -14,8 +14,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="15dp"
         android:layout_marginTop="17dp"
-        android:onClick="fBack_Click"
-        app:srcCompat="@drawable/ic_prev"
+        android:onClick="fSettings_Click"
+        app:srcCompat="@drawable/ic_setting"
         tools:ignore="UsingOnClickInXml" />
 
     <ImageView
@@ -27,8 +27,8 @@
         android:layout_marginTop="17dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="44dp"
-        android:onClick="fAjouter_Click"
-        app:srcCompat="@drawable/ic_plus2"
+        android:onClick="fUser_Click"
+        app:srcCompat="@drawable/ic_edit_user1"
         tools:ignore="UsingOnClickInXml" />
 
     <TextView
@@ -42,7 +42,7 @@
         android:layout_toStartOf="@+id/iv_Left_Arrow1"
         android:layout_toEndOf="@+id/iv_Left_Arrow"
         android:gravity="center"
-        android:text="Menu"
+        android:text="Tarifs par formules"
         android:textColor="@color/black"
         android:textSize="18dp" />
 
@@ -56,53 +56,65 @@
         android:padding="10dp"
         app:srcCompat="@drawable/ic_logo2" />
 
-    <Button
-        android:id="@+id/btn_ListeVoiture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ListView
+        android:id="@+id/list_item"
+        android:layout_width="272dp"
+        android:layout_height="258dp"
         android:layout_below="@+id/iv_Logo"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="31dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="72dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" >
+
+
+    </ListView>
+
+
+    <Button
+        android:id="@+id/btn_ShowTarif"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/list_item"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/rectangle"
-        android:text="Gérer les voitures"
+        android:text="Consulter"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20dp" />
 
-    <Button
-        android:id="@+id/btn_ListeAdherent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_Logo"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="122dp"
-        android:layout_marginEnd="30dp"
-        android:background="@drawable/rectangle"
-        android:text="Gérer les adhérents"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="300dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_GererTarifs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_Logo"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="188dp"
-        android:layout_marginEnd="29dp"
-        android:background="@drawable/rectangle"
-        android:text="Gérer les tarifs"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+        <RadioButton
+            android:id="@+id/S"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S" />
+
+        <RadioButton
+            android:id="@+id/L"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="L" />
+
+        <RadioButton
+            android:id="@+id/M"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="M" />
+
+    </RadioGroup>
+
 
 
 </RelativeLayout>

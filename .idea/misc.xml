@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/drawable/ic_setting.xml" value="0.1165" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activity__formule_tarif.xml" value="0.2821557971014493" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activity_ajouter_voiture.xml" value="0.26875" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activity_create_adherent.xml" value="0.33" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activity_formule_tarif.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activity_list_abonne_formule.xml" value="0.26875" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activity_list_adherent.xml" value="0.26875" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activity_list_formule.xml" value="0.33" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activity_list_formules_tarifs.xml" value="0.33" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activity_liste_categorie_voitures.xml" value="0.2" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activity_login.xml" value="0.26875" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activity_main.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activity_menu.xml" value="0.33" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activity_show_tarif.xml" value="0.2821557971014493" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/activuty_show_tarif.xml" value="0.26875" />
+        <entry key="..\:/Users/dev/StudioProjects/AP-4.1-AutoCool-App-bastien/app/src/main/res/layout/zz.xml" value="0.26875" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>
